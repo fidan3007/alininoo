@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <div class="breadcrumb-items">
+    <li class="breadcrumb-item"><a class="breadcrumb-home" href="{% url 'core:home' %}">Əsas</a></li>
+    <li class="breadcrumb-item " aria-current="page">Kataloq</li>
+  </ol>
+  </div>
+</nav>
+    <div class="detailed-product">
+        <div class="book-photo col-md-5">
+            <img style="width: 336px;" class="detailed-img" src="{{ product.image.url }}" alt="">
+        </div>
+        <div class="book-info col-md-7">
+            <h5 class="product-name">{{ product.title }}</h5>
+            <p>Nəşriyyat: <a href="#">{{ product.publisher }}</a></p>
+            <p class="author-name">Müəllif: <a href="#">{{ product.author }}</a></p>
+            <h5 class="product-price">{{ product.price }} AZN  <span style="text-decoration: line-through;" class="product-sale-price">{{ product.discount_price }} AZN</span></h5>
+              
+
+            <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+            </div>
+            <button class="price-online">Onlayna özəl qiymət</button>
+            <div class="category">
+              {% for t in product.tag.all %}
+                <a class="category-tag" href="#">{{ t.title }}</a>
+              {% endfor %}
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="">
+    <ul class="nav nav-pills mb-3 detailed-btn" id="pills-tab" role="tablist">
+  <li class="nav-item " role="presentation">
+    <a class="nav-link active description-btn" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Təsvir </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link features-btn" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Xüsusiyyətlər</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active description " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <p>{{ product.description }}</p>
+   
+
+  </div>
+  <div class="tab-pane fade features" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div class="product-info col-md-6">
+
+        <div class="genre">
+            <div class="div">
+                <span>Nəşriyyat:</span>
+            <div class="hr-div"></div>
+            </div>
+            <p class="jenre-name">{{ product.publisher }}</p>
+        </div>
+
+        <div class="genre">
+            <div class="div">
+            <span>Müəllif:</span>
+            <div class="hr-div"></div>
+            </div>
+            <p class="jenre-name">{{ product.author }} </p>
+        </div>
+        
+    </div>
+    <div class="product-info col-md-6">
+
+        <div class="genre">
+            <div class="div">
+                <span>Dil:</span>
+                <div class="hr-div"></div>
+            </div>
+            <p class="jenre-name">{{ product.category }}</p>
+        </div>  
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="reviews-product">
+        <h4 class="reviews-title">Məhsul haqqında rəylər</h4>
+        <div class="reviews-items">
+        <div class="grey-line">
+            <img src="./img/pen.png" alt="">
+            <span>Burada hələ heç kim rəy yazmayıb. Birinci olun!</span>
+        </div>
+        <button class="wrt-cmt">Rəy yazın</button>
+        </div>
+
+    </div>
+
+    <div class="similar-products">
+      <h4 class="similar-title">Bənzər məhsullar</h4>
+           <div class="">
+<div id="carouselExampleIndicators7" class="carousel slide" data-ride="carousel">
+ 
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="all-books">
+        {% for product in similar_products %}
+    <div class="book1">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{product.price}} AZN
+    <span style="text-decoration: line-through;" class="sale-price">{{product.discount_price}}AZN</span></h5>
+    <p class="card-text">{{product.title}}</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+    <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
+
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+        {% endfor %}
+    </div>
+    
+    </div>
+    <div class="carousel-item">
+     <div class="all-books">
+    {% for product in similar_products2 %}
+    <div class="book1">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{product.price}} AZN
+    <span style="text-decoration: line-through;" class="sale-price">{{product.discount_price}}AZN</span></h5>
+    <p class="card-text">{{product.title}}</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+    <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
+
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+    {% endfor %}        
+    </div>
+    
+    </div>
+   
+  
+  </div>
+  <a  class="carousel-control-prev scroll"  href="#carouselExampleIndicators7" role="button" data-slide="prev">
+    <span style="" class="carousel-control-prev-icon" aria-hidden="true">
+      
+      <!-- icon qoyulacaq -->
+    </span>
+    <!-- <span style="border-radius: 50%;background-color: red;padding: 60px;" class="sr-only">Previous</span> -->
+  </a>
+  <a class="carousel-control-next scroll2" href="#carouselExampleIndicators7" role="button" data-slide="next">
+    <span style="" class="carousel-control-next-icon" aria-hidden="true"></span>
+    <!-- <span class="sr-only">Next</span> -->
+  </a>
+</div>
+</div>
+    </div>
+
+{% endblock %}
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+

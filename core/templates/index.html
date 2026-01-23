@@ -1,0 +1,655 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="slide">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+  </ol>
+  <div class="carousel-inner "  >
+    {% for slider in sliders %}
+    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+      <img class="d-block w-100" src="{{ slider.image  }}" alt="First slide">
+    </div>
+    {% endfor %}
+  </div>
+  <a  class="carousel-control-prev"  href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+
+
+<div class="books">
+    <a class="slide-title" href="{% url 'core:filtr-page' %}">Yeni Azərbaycan nəşrləri</a>
+     <div class="">
+<div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+ 
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="all-books">
+        {% for product in az_products1 %}
+        <div class="book1">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ product.image }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ product.price }} AZN
+    <span style="text-decoration: line-through;" class="sale-price">{{product.discount_price}}AZN</span></h5>
+    <p class="card-text"> {{product.title}}</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+    <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
+
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+    {% endfor %}
+       
+    </div>
+    
+    </div>
+    <div class="carousel-item">
+     <div class="all-books">
+        {% for product in az_products2 %}
+         
+    <div class="book1">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ product.image }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ product.price }} AZN
+    <span style="text-decoration: line-through;" class="sale-price">{{product.discount_price}}AZN</span></h5>
+    <p class="card-text"> {{product.title}}</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+    <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
+
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+    {% endfor %}
+       
+    </div>
+    
+    </div>
+   
+  
+  </div>
+  <a  class="carousel-control-prev scroll"  href="#carouselExampleIndicators2" role="button" data-slide="prev">
+    <span style="" class="carousel-control-prev-icon" aria-hidden="true">
+      
+      <!-- icon qoyulacaq -->
+    </span>
+    <!-- <span style="border-radius: 50%;background-color: red;padding: 60px;" class="sr-only">Previous</span> -->
+  </a>
+  <a class="carousel-control-next scroll2" href="#carouselExampleIndicators2" role="button" data-slide="next">
+    <span style="" class="carousel-control-next-icon" aria-hidden="true"></span>
+    <!-- <span class="sr-only">Next</span> -->
+  </a>
+</div>
+</div>
+</div>
+
+
+<div class="ru-books">
+  <a class="slide-title" href="#">Yeni Rus Nesrleri</a>
+    <div class="">
+<div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel">
+ 
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="all-rubook">
+      {% for product in rus_products1 %}
+    <div class="rubook1">  
+    <div class="product-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ product.image }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"> {{ product.price }} AZN
+    <span style="text-decoration: line-through;" class="sale-price">{{product.discount_price}} AZN</span></h5>
+    <p class="card-text">{{product.title}}</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+    <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
+ 
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+       {% endfor %} 
+    </div>
+    
+    </div>
+
+    <div class="carousel-item">
+      <div class="all-rubook">
+      {% for product in rus_products2 %}
+
+    <div class="rubook1">  
+    <div class="product-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ product.image }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"> {{ product.price }} AZN
+    <span style="text-decoration: line-through;" class="sale-price">{{product.discount_price}} AZN</span></h5>
+    <p class="card-text">{{product.title}}</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+    <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+    {% endfor %}
+    </div>
+    </div>
+    
+  </div>
+  <a class="carousel-control-prev scroll"  href="#carouselExampleIndicators4" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next scroll2" href="#carouselExampleIndicators4" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+</div>
+
+
+<div class="tr-books">
+  <a class="slide-title" href="#">Yeni Turk Nesrleri</a>
+    <div class="">
+<div id="carouselExampleIndicators5" class="carousel slide" data-ride="carousel">
+ 
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="all-trbook">
+      {% for product in tr_products1 %}
+
+    <div class="trbook1">  
+    <div class="product-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ product.image }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"> {{ product.price }} AZN
+    <span style="text-decoration: line-through;" class="sale-price">{{product.discount_price}} AZN</span></h5>
+    <p class="card-text">{{product.title}}</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+    <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
+ 
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+      {% endfor %}
+    </div>
+    
+    </div>
+    <div class="carousel-item">
+      <div class="all-trbook">
+      {% for product in tr_products2 %}
+    <div class="trbook1">  
+    <div class="product-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ product.image }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"> {{ product.price }} AZN
+    <span style="text-decoration: line-through;" class="sale-price">{{product.discount_price}} AZN</span></h5>
+    <p class="card-text">{{product.title}}</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+    <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
+ 
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+    {% endfor %}
+    </div>
+    
+    </div>
+
+    
+    
+  </div>
+  <a class="carousel-control-prev scroll"  href="#carouselExampleIndicators5" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next scroll2" href="#carouselExampleIndicators5" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+</div>
+
+<div class="en-books">
+  <a class="slide-title" href="#">Yeni Ingilis Nesrleri</a>
+    <div class="">
+<div id="carouselExampleIndicators6" class="carousel slide" data-ride="carousel">
+ 
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="all-enbook">
+      {% for product in ing_products1 %}
+
+    <div class="enbook1">  
+      <div class="product-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ product.image }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"> {{ product.price }} AZN
+    <span style="text-decoration: line-through;" class="sale-price">{{product.discount_price}} AZN</span></h5>
+    <p class="card-text">{{product.title}}</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+    <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
+ 
+
+    </div>
+    
+  </div>
+</div>
+    </div> 
+    {% endfor %} 
+  </div>
+  <a class="carousel-control-prev scroll"  href="#carouselExampleIndicators6" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next scroll2" href="#carouselExampleIndicators6" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<div class="carousel-item">
+      <div class="all-enbook">
+      {% for product in ing_products2 %}
+
+    <div class="enbook1">  
+          <div class="product-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ product.image }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"> {{ product.price }} AZN
+    <span style="text-decoration: line-through;" class="sale-price">{{product.discount_price}} AZN</span></h5>
+    <p class="card-text">{{product.title}}</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+    <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
+ 
+
+    </div>
+    
+  </div>
+</div>
+    </div> 
+  {% endfor %} 
+
+  </div>
+  <a class="carousel-control-prev scroll"  href="#carouselExampleIndicators6" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next scroll2" href="#carouselExampleIndicators6" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="benefits">
+  <div class="benefit1">  
+    <img class="benefit-img" src="https://static.insales-cdn.com/r/GuywJz6Cmg0/rs:fit:100:100:1/q:90/plain/files/1/6711/36715063/original/9815930.png@webp" alt="">
+    <h5 class="benefit-title">Sürətli çatdırılma</h5>
+    <p class="benefit-text">Bakı üzrə hər yerə 24 saat ərzində <br> çatdırılma edirik</p>
+    </div>
+  <div class="benefit2">  
+    <img class="benefit-img" src="https://static.insales-cdn.com/r/A0ngRkroMp8/rs:fit:100:100:1/q:90/plain/files/1/6907/36715259/original/2639273.png@webp" alt="">
+    <h5 class="benefit-title">Ekspress çatdırılma</h5>
+    <p class="benefit-text">Bakı daxilində 1 saata, bölgələrə 7 saata.</p>
+    </div>
+  <div class="benefit3">  
+    <img class="benefit-img" src="https://static.insales-cdn.com/r/CUr_nBO77aA/rs:fit:100:100:1/q:90/plain/files/1/6469/36714821/original/1019607_de0c7e021512bda24a3e0bcdabdb8626.png@webp" alt="">
+    <h5 class="benefit-title">Rahat ödəniş</h5>
+    <p class="benefit-text">Sifarişi nağd, kart, yaxud ödəmə <br> terminalları ilə ödəyə bilərsiniz.</p>   
+    </div>
+  <div class="benefit4">  
+    <img class="benefit-img" src="https://static.insales-cdn.com/r/svTrHvLu8I4/rs:fit:100:100:1/q:90/plain/files/1/6503/36714855/original/6406139.png@webp" alt="">
+    <h5 class="benefit-title">"Özün götür" xidməti</h5>
+    <p class="benefit-text">Sifarişi ən yaxın təhvil məntəqəsindən <br> özün götür, daha az çatdırılma haqqı ödə.</p>
+    </div>
+  <div class="benefit5">  
+    <img class="benefit-img" src="https://static.insales-cdn.com/r/2E2UMKSNHSg/rs:fit:100:100:1/q:90/plain/files/1/6635/36714987/original/4586103.png@webp" alt="">
+    <h5 class="benefit-title">Poçtla çatdırılma</h5>
+    <p class="benefit-text">Azərbaycanın hər bölgəsinə poçtla və <br> ekspress çatdırılma edirik.</p>
+    </div>
+</div>
+
+<div class="adverts">
+  <div class="advert1">
+    <a href="#">
+      <img class="advert-img" src="{% static './img/lego.png' %}" alt="">
+    </a>
+  </div>
+  <div class="advert2">
+    <a href="#">
+      <img class="advert-img" src="{% static './img/instax.png' %}" alt="">
+    </a>
+  </div>
+  <div class="advert3">
+    <a href="#">
+      <img class="advert-img" src="{%  static './img/kecmisinsehri.png'%}" alt="">
+    </a>
+  </div>
+</div>
+
+<div class="news">
+  <a class="news-tit" href="#">Xeberler</a>
+  <div class="news-items">
+    {% for news in newss %}
+    <div class="news-card">
+      <div class="new-div">
+    <a href="">
+      <img class="news-img" src="{{news.image}}" alt="">
+      <div class="news-text">
+      <h5 class="news-title">{{news.title}}</h5>
+      <p class="news-description"> {{news.text}}</p>
+      </div>
+
+    </a>
+    </div>
+  </div>
+  {% endfor %}
+
+  </div>
+  
+</div>
+
+<div class="brands">
+  <div class="brand">
+    <a href="#">
+      <img class="brand-img" src="{%  static './img/fuji.png' %}" alt="">
+    </a>
+  </div>
+  <div class="brand">
+    <a href="#">
+      <img class="brand-img" src="{%  static './img/Ravensburger_logo.png' %}" alt="">
+    </a>
+  </div>
+  <div class="brand">
+    <a href="#">
+      <img class="brand-img" src="{%  static './img/LEGO_logo.png' %}" alt="">
+    </a>
+  </div>
+  <div class="brand">
+    <a href="#">
+      <img class="brand-img" src="{%  static './img/clementoni-logo.png'%}" alt="">
+    </a>
+  </div>
+  <div class="brand">
+    <a href="#">
+      <img class="brand-img" src="{%  static './img/paperblanks.png' %} " alt="">
+    </a>
+  </div>
+  <div class="brand">
+    <a href="#">
+      <img class="brand-img" src="{%  static './img/Hasbro_logo.png' %}" alt="">
+    </a>
+  </div>
+  <div class="brand">
+    <a href="#">
+      <img class="brand-img" src="{%  static './img/Mattel_logo.svg' %}" alt="">
+    </a>
+  </div>
+  <div class="brand">
+    <a href="#">
+      <img class="brand-img" src="{%  static './img/Funko_Logo.png' %}" alt="">
+    </a>
+  </div>
+</div>
+
+<div class="blogs">
+  <div class="blog-items">
+    <div class="blog-card">
+      <div class="blog-div">
+    <a href="#">
+      <img class="blog-img" src="{%  static './img/fotoaparatları__6_.png' %}" alt="">
+
+    </a>
+    </div>
+  </div>
+  
+  <div class="blog-card blog2">
+    <div class="blog-div">
+    <a href="#">
+      <img class="blog-img" src="{%  static './img/harry_potter.png' %}" alt="">
+      
+
+    </a>
+     </div>
+  </div>
+  <div class="blog-card blog3">
+    <div class="blog-div">
+    <a href="#">
+      <img class="blog-img" src="{%  static './img/fotoaparatları__5_.png'%}" alt="">
+
+    </a>
+    </div>
+
+  </div>
+  </div>
+</div>
+
+<div class="comments">
+  <a class="comment-tit" href="#">Musteri Reyleri</a> 
+  <div class="all-comments">
+    <div class="comment1">
+    <div class="comment-user">
+      <img class="profile" src="./img/womanpp.png" alt="">
+      <div class="user-name">
+        <h2>Jalə Məmmədova</h2>
+        <p>Bakı Azərbaycan</p>
+      </div>   
+    </div>
+    <div class="comment-text">
+      <a href="">
+        <p>Спасибо большое за книгу!</p>
+      </a>
+      </div>
+  </div>
+  <div class="comment2">
+    <div class="comment-user">
+      <img class="profile" src="./img/manpp.png" alt="">
+      <div class="user-name">
+        <h2>Ruslan Məmmədov,</h2>
+        <p>Ukrayna</p>
+      </div>   
+    </div>
+    <div class="comment-text">
+      <a href="">
+        <p>Merhaba.Günüm çok güzel sürprizle tamamlandı,  elime sabırsızlıkla beklediğim kitapları  aldım....çok teşekkür ederim. "Alinino.az" harikasısınız</p>
+      </a>
+      </div>
+  </div>
+  <div class="comment3">
+    <div class="comment-user">
+      <img class="profile" src="./img/womanpp.png" alt="">
+      <div class="user-name">
+        <h2>Jalə Məmmədova</h2>
+        <p>Bakı Azərbaycan</p>
+      </div>   
+    </div>
+    <div class="comment-text">
+      <a href="">
+        <p>Спасибо большое за книгу!</p>
+      </a>
+      </div>
+  </div>
+  </div>
+  
+  
+</div>
+
+<div class="club">
+  <a class="news-tit" href="#">Ali ve Nino kitab klubu</a> 
+  <div class="news-items">
+    {% for club in clubs %}
+    <div class="news-card">
+      <div class="new-div">
+    <a href="#">
+      <img class="news-img" src="{{ club.image }}" alt="">
+      <div class="news-text">
+      <h5 class="news-title">{{club.title}}</h5>
+      <p class="news-description"> {{club.text}} </p>
+      </div>
+
+    </a>
+    </div>
+  </div>
+    {% endfor %}
+ 
+  </div>
+</div>
+
+<div class="events">
+  <a class="event-tit" href="#">Tədbirler.Aktivliklər.Əyləncələr</a> 
+  <div class="news-items">
+    {% for event in events %}
+    <div class="news-card">
+      <div class="new-div">
+    <a href="#">
+      <img class="news-img" src="{{event.image}}" alt="">
+      <div class="news-text">
+      <h5 class="news-title">{{event.title}}</h5>
+      <p class="news-description">{{event.text}} </p>
+      </div>
+
+    </a>
+    </div>
+  </div>
+    {% endfor %}  
+
+  </div>
+</div>
+
+<div class="info">
+  <h1>Bakıda kitabı haradan almaq olar?</h1>
+  <p>Alinino.az internet kitab mağazası kitabsevənlər üçün rahat servis xidməti göstərir. Əgər siz kitab almaq istəyirsinizsə, bu işdə bizim saytımız sizə yardımçı ola bilər. Saytda müxtəlif janrlarda kitablar, ensiklopediyalar, klassik əsərlər, belletristika, müasir və elmi bədii əsərlər təklif olunur.</p>
+  <p>Kitab mağazası Bakıda hər kəs üçündür. Demək olar ki, hər biriniz sizə lazım olan kitabı hardan almaq problemi ilə üzləşmisiniz. Əvvəllər, bir kitabı almaq üçün bir neçə kitab mağazasına baş çəkmək məcburiyyətində qalırdınız. İndi isə, hər şey daha asandır. Onlayn mağazadan istədiyiniz kitabı əlverişli qiymətə əldə etmək imkanını yaradırıq.</p>
+  <p>Kitab almaq qərarına gəldikdən sonra, siz onu Bakının istənilən yerindən sifariş edə bilərsiniz, kuryer aldığınız malı göstərilən ünvana qısa zamanda çatdıracaq. Sifariş etmək üçün, sizin kitabı seçib “Tıkla al” düyməsinə basmağınız yetərlidir. Bu cür alış-verişin üstünlüyü – evdən vəya iş yerinizdən ayrılmadan, isdəyiniz kitabı tapmaqda vaxt itirmədən əldə etməkdir.</p>
+  <p>Əgər siz internet mağazalara güvənmirsinizsə, vəya kitabı mağazadan özünüz seçib, əldə tutub vərəqlədikdən sonra əldə etmək istəyirsinizsə, o zaman bizim mağazalarımizdan birinə gələ bilərsiniz.</p>
+  <h2>Bakıda kitabı necə sifariş etmək olar?</h2>
+  <p>Yeni texnologiyaların inkişafı ilə, yaşayış yeri iş və təhsildə böyük rol oynamır. Artıq bir çox insanlar meqapolisin səs-küyündən qaçaraq şəhər kənarı evlərdə yaşamağa üstünlük verirlər. Hətta belə hallarda belə internet mağazadan kitab almaq problem deyil, çünki mağaza bütün Bakı və Azərbaycan ərazisində fəaliyyət göstərir. Müxtəlif janrlarda istədiyiniz kitabı indi çox asanlıqda, evdən bayıra çıxmadan sifariş edə bilərsiniz. Mağazamızda istədiyiniz dildə kitablar – azərbaycan, rus, ingilis, türk dilində kitablar, uşaq ədəbiyyatı, bədii ədəbiyyat, detektivlər, klassik əsərlər, romanlar, biznes kitabları, lüğətlər, memarlıq haqqında kitablar, tarixi, hüquq kitabları, dəbə aid kitablar, kulinariya, uşaq tərbiyəsi, tibbi, psixologiya, ezoterika, dini, əl işləri, turizm, filosifiya, elmi-kütləvi ədəbiyyəta aid kitablar var. Bizim mağazamızdan istədiyiniz – fantastikadan tutmuş, elmi ədəbiyyata kimi kitabları əldə edə bilərsiniz.</p>
+  <p>Kitab almaq heç belə asan olmamışdı. İndi siz nəinki vaxt itirmədən kitab əldə edə biləcəksiniz, həm də mağazamız tərəfindən keçirilən müxtəlif aksiyalar və ya endirimlər, 50 % endirimli kitablar və hətta 1 manata olan kitabları da əldə edə biləcəksiniz. İndi siz çox asanlıqla elektron kataloqdan istifadə etməklə istədiyiz kitabı seçə, kitab annotasiyasını və kitab haqqında digər oxucuların yazdığı rəyləri oxuya bilərsiniz. Siz əmin ola bilərsiniz ki, sifarişi aldıqdan sonra məyus olmayacaqsınız – siz istədiyiniz kitabı əldə etmiş olacaqsınız.</p>
+  <p>Mağazamızda kitablarla yanaşı hədiyyələr, elektronik mallar, oyuncaqlar, pazllar, məktəb üçün ləvazimatlar, ətriyyat, A.Salamaxinanın yaylığları və milli kəlağayıları da əldə edə bilərsiniz.</p>
+  <h2>Russiya, Amerika və Avropaya kitab sifariş etmək olar?</h2>
+  <p>Xarici ölkədə yaşasanız da bizim mağazamızdan internet ilə azərbaycan kitabları və milli suvenirləri ala bilərsiniz. Bu rus dilində və digər dillərdə olan kitablara da aiddir. Azərbaycan dilində olan kitabları biz özümüz tərcümə edib nəşr edirik.</p>
+  <p>Sifariş etdiyiniz kitabı, ödəniş edildiyi gündən bir gün sonra istədiyiniz ölkəyə göndərə bilərik. Siz sifarişlərinizi 3-12 gün arası ala bilərsiniz.</p>
+  <p>Azərbaycanın rayonlarından necə sifariş edə bilərik?</p>
+  <p>Əgər siz Azərbaycanda yaşayırsınızda kitab sifariş etmək sizin üçün çox asan olacaq. 15 illik iş təcrübəsində biz işimizin peşəkarı olmuşuq. Sifarişinizi xüsusi ödənişlə Ağstafa, Naxçıvan, Gəncə, Şamaxı, Lənkəran, Zaqatala, Quba, Qəbələ, Gədəbəy, Mingəçevir və digər şəhərlərə çatdırırıq. Siz ödənişi kitabı aldıqdan sonra edirsiniz.</p>
+  <p>Alinino.az internet mağazamızdan kitab əldə etmək hər zaman rahat və əlverişlidir.</p>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

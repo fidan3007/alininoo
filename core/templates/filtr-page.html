@@ -1,0 +1,747 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <div class="breadcrumb-items">
+    <li class="breadcrumb-item"><a class="breadcrumb-home" href="{% url 'core:home' %}">Əsas</a></li>
+    <li class="breadcrumb-item " aria-current="page">Kataloq</li>
+  </ol>
+  </div>
+</nav>
+     <div class="collapse-title">
+            <h4 class="category-title">Yeni Azərbaycan nəşrləri</h4>
+            <p class="quantity">{{products.count}} məhsul</p>
+        </div>
+        <div class="filtr-page">
+    <div class="part1 filter">
+       <a class="category-name" href="#">Yeni Azərbaycan nəşrləri</a>
+       <br>
+       <div class="filtr-card">
+        
+       
+       <a class="filter-item" href="#">Mövcud olan məhsullar</a>
+       
+        <a class="filter-item" href="#">Qiymət,  AZN</a>
+
+       <div class="accordion" id="accordionExample">
+  
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn2 btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          Müəllif
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        <div class="form-check">
+  <a href="?author=bakixanov"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" >
+    Abbasqulu ağa Bakıxanov
+  </label></a>
+</div>
+        <div class="form-check">
+  <a href="?author=brown"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" >
+    Dan Brown
+  </label></a>
+</div>
+        <div class="form-check">
+  <a href="?author=calil"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" >
+    Cəlil Məmmədquluzadə
+  </label></a>
+</div>
+        <div class="form-check">
+  <a href="?author=susan"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" >
+    Susan Sontag
+  </label></a>
+</div>
+
+        <div class="form-check">
+  <a href="?author=rauf"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" >
+    Mehmet Rauf
+  </label></a>
+</div>
+        <div class="form-check">
+  <a href="?author=leo"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" >
+    Leo Tolstoy
+  </label></a>
+</div>
+        <div class="form-check">
+  <a href="?author=emili"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" >
+    Эмили Баллестерос
+  </label></a>
+</div>
+
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="heading3">
+      <h2 class="mb-0">
+        <button class="btn btn2 btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+          Dil
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapse3" class="collapse show" aria-labelledby="heading3" data-parent="#accordionExample">
+      <div class="card-body">
+        <div class="form-check">
+  <a href="?category=rus"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" >
+    rus
+  </label></a>
+</div>
+
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="heading4">
+      <h2 class="mb-0">
+        <button class="btn btn2 btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+          Nəşriyyatçı
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapse4" class="collapse show" aria-labelledby="heading4" data-parent="#accordionExample">
+      <div class="card-body">
+       <div class="form-check">
+  <a href="?publisher=qanun"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" >
+    Qanun Nəşriyyatı
+  </label></a>
+</div>
+      <div class="form-check">
+  <a href="?publisher=is"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" >
+    İş Bankası Kültür Yayınları
+  </label></a>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
+  </div>
+  {% for news in newss %}
+  <div class="news-rc">
+    <div class="article">
+      <a class="news-a" href="#">
+        <img src="{{news.image.url}}" alt="">
+        <h6>{{news.title}}</h6>
+        <p>{{news.description}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </p>
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+    </div>
+    <div class="part2">
+      
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sirala
+        </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'core:filtr-page'%}?sort=new">Yeniliklər</a>
+          <a class="dropdown-item" href="{% url 'core:filtr-page'%}?sort=lower-price">Öncə aşağı qiymət</a>
+          <a class="dropdown-item" href="{% url 'core:filtr-page'%}?sort=higher-price">Öncə yüksək qiymət</a>
+          <a class="dropdown-item" href="{% url 'core:filtr-page'%}?sort=discount">Endirim məbləği ilə</a>
+        </div>
+
+<div class="products">
+  <div class="container">
+    <div class="row">
+ {% for product in products %}
+      <div class="col-md-3">
+        <a class="product-a" href="#">
+    <div class="book1">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ product.price }} AZN
+    <span style="text-decoration: line-through;" class="sale-price">{{ product.discount_price}}AZN</span></h5>
+    <p class="card-text">{{ product.title }}</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+     </a>
+      </div>
+        {% endfor %}
+    </div>
+  </div>
+ 
+  
+
+     </div>
+
+
+<!-- <div class="products">
+  <a class="product-a" href="#">
+    <div class="book1">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="./img/atlas.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">3.39 AZN
+    <span style="text-decoration: line-through;" class="sale-price">2.50AZN</span></h5>
+    <p class="card-text">Dunya atlasi</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+    
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+     </a>
+  <a class="product-a" href="#">
+    <div class="book2">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="./img/atlas.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">3.39 AZN
+    <span style="text-decoration: line-through;" class="sale-price">2.50AZN</span></h5>
+    <p class="card-text">Dunya atlasi</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+     </a>
+  <a class="product-a" href="#">
+    <div class="book3">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="./img/atlas.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">3.39 AZN
+    <span style="text-decoration: line-through;" class="sale-price">2.50AZN</span></h5>
+    <p class="card-text">Dunya atlasi</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+     </a>
+  <a class="product-a" href="#">
+    <div class="book4">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="./img/atlas.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">3.39 AZN
+    <span style="text-decoration: line-through;" class="sale-price">2.50AZN</span></h5>
+    <p class="card-text">Dunya atlasi</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+     </a>
+</div>
+<div class="products">
+  <a class="product-a" href="#">
+    <div class="book1">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="./img/atlas.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">3.39 AZN
+    <span style="text-decoration: line-through;" class="sale-price">2.50AZN</span></h5>
+    <p class="card-text">Dunya atlasi</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+     </a>
+  <a class="product-a" href="#">
+    <div class="book2">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="./img/atlas.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">3.39 AZN
+    <span style="text-decoration: line-through;" class="sale-price">2.50AZN</span></h5>
+    <p class="card-text">Dunya atlasi</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+     </a>
+  <a class="product-a" href="#">
+    <div class="book3">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="./img/atlas.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">3.39 AZN
+    <span style="text-decoration: line-through;" class="sale-price">2.50AZN</span></h5>
+    <p class="card-text">Dunya atlasi</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+ 
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+     </a>
+  <a class="product-a" href="#">
+    <div class="book4">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="./img/atlas.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">3.39 AZN
+    <span style="text-decoration: line-through;" class="sale-price">2.50AZN</span></h5>
+    <p class="card-text">Dunya atlasi</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+  
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+     </a>
+</div>
+<div class="products">
+  <a class="product-a" href="#">
+    <div class="book1">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="./img/atlas.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">3.39 AZN
+    <span style="text-decoration: line-through;" class="sale-price">2.50AZN</span></h5>
+    <p class="card-text">Dunya atlasi</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+   
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+     </a>
+  <a class="product-a" href="#">
+    <div class="book2">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="./img/atlas.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">3.39 AZN
+    <span style="text-decoration: line-through;" class="sale-price">2.50AZN</span></h5>
+    <p class="card-text">Dunya atlasi</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+    
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+     </a>
+  <a class="product-a" href="#">
+    <div class="book3">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="./img/atlas.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">3.39 AZN
+    <span style="text-decoration: line-through;" class="sale-price">2.50AZN</span></h5>
+    <p class="card-text">Dunya atlasi</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+     </a>
+  <a class="product-a" href="#">
+    <div class="book4">  
+    <div class="books-list">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="./img/atlas.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">3.39 AZN
+    <span style="text-decoration: line-through;" class="sale-price">2.50AZN</span></h5>
+    <p class="card-text">Dunya atlasi</p>
+    <div class="rating">
+  <i  class="fa-solid fa-star rate-star"></i>
+   <i  class="fa-solid fa-star rate-star"></i>
+    <i  class="fa-solid fa-star rate-star"></i>
+     <i  class="fa-solid fa-star rate-star"></i>
+      <i  class="fa-solid fa-star rate-star"></i>
+      <i class="fa-solid fa-comment comment-icon"></i>
+</div>
+
+
+    </div>
+    
+  </div>
+</div>
+    </div>
+     </a>
+</div> -->
+
+<div class="filtr-text" id="learn-more-div">
+  <h4>Ən yeni Azərbaycan nəşrlərini Alinino.az saytından sifariş edin!</h4>
+  <p>Bizim onlayn mağazamızda Azərbaycan dilində yeni çap olunan bütün kitabları endirimli qiymətlə sifariş etmək mümkündür.</p>
+  <p>Azərbaycan dilində klassika, biznes kitabları, psixologiya və şəxsi inkişaf kitabları, detektiv romanlar və digər yüzlərlə yeni kitabı evdən çıxmadan <br> məhz Alinino.az online mağazasından çatdırılma ilə əldə edə bilərsiniz.</p>
+   <h4>Yeni kitabları niyə mütləq oxumalıyıq?</h4>
+  <p> Yeni kitablar oxumaq bir çox fayda verə bilər. Yeni kitablar oxumağın bəzi müsbət təsirləri bunlardır:</p>
+  <p>Biliyin genişləndirilməsi: Yeni kitablar sizə müxtəlif mövzular haqqında məlumat əldə etməyə imkan verir. Bu, özünüzü təkmilləşdirmək və daha çox bilik əldə etmək üçün əla bir yol ola bilər.</p>
+  <p>Düşüncə qabiliyyətinin inkişafı: Yeni kitablar müxtəlif perspektivləri və düşüncə tərzini kəşf etməyə kömək edə bilər. Bu, düşünmə qabiliyyətinizi artıra bilər.</p>
+  <p>Söz bazasının genişləndirilməsi: Yeni kitablar oxuyarkən yeni sözlər öyrənmək imkanınız ola bilər. Bu, söz ehtiyatınızı zənginləşdirir və ünsiyyət bacarıqlarınızı artırır.</p>
+  <p>Empatiyanın inkişafı: Romanlar və hekayələr müxtəlif personajların həyatını anlamaq imkanı verir. Bu, empatiyanızı yaxşılaşdırır və insan münasibətlərinizdə daha anlayışlı olmağa kömək edə bilər.</p>  
+  <p>Diqqətin inkişafı: Kitab oxumaq diqqət və diqqət bacarıqlarını inkişaf etdirə bilər. Bir kitabı bitirmək üçün uzun müddət diqqətinizə ehtiyacınız ola bilər.</p>
+  <p>Əyləncə və həzz: Yeni kitablar oxumaq təkcə faydalı deyil, həm də zövqlü ola bilər. Yaxşı bir kitab sizi müxtəlif dünyalara daşıya bilər və darıxdırıcı vaxtları daha maraqlı edə bilər.</p>
+  <p>Artan Yaradıcılıq: Xüsusilə bədii əsərlər sizin təxəyyülünüzü və yaradıcılığınızı stimullaşdıra bilər. Hekayələr və personajlar öz düşüncənizi genişləndirməyə kömək edə bilər.</p>
+  <p>Mənəvi İnkişaf: Bəzi kitablar şəxsi inkişaf və mənəvi inkişafla bağlı təlimat verə bilər. Bu tip kitablar özünüzü daha yaxşı başa düşməyə və həyatınızı yaxşılaşdırmağa kömək edə bilər</p>
+  <p>Düşüncə müxtəlifliyi: Fərqli yazıçıların fərqli düşüncə tərzi və perspektivləri var. Buna görə də, yeni kitablar oxumaq düşüncə müxtəlifliyini təşviq edir və zəngin intellektual təcrübə təmin edir</p>
+
+
+
+<p>
+  <button class="btn btn-primary more2" id="dont-learn-more" onclick="dontLearnMore()">
+    Bağla
+</button>
+</p>
+
+</div>
+<button class="btn btn-primary more ml-4" id="learn-more" onclick="learnMore()">
+    Daha ətraflı oxuyun
+</button>
+
+    </div>
+        </div>
+{% endblock %}
+    
+
+
+
+
+
+
+
+
+
+   
+
