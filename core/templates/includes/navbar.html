@@ -1,3 +1,5 @@
+ {% load static %}
+ 
  <div class="topbar">
         <div class="topbar-left">
             
@@ -42,7 +44,7 @@
         </div>
     <div class="bottombar">
         <nav class="navbar navbar-light bg-light justify-content-between">
-  <a class="navbar-brand" href="index.html"><img class="navbar-logo" src="./img/alininologo.png" alt=""></a>
+  <a class="navbar-brand" href="{% url 'core:home' %}"><img class="navbar-logo" src="{% static 'img/alininologo.png '%}" alt=""></a>
 
     <div class="input-group mb-6">
       <form action="{% url 'core:filtr-page' %}">
@@ -52,6 +54,7 @@
     <span class="input-group-text search-btn" id="basic-addon2"><img class="search-icon" src="https://www.freeiconspng.com/uploads/search-icon-png-29.png" alt=""></span>
   </div>
 </div>
+
 <div class="profile-icon">
     <div class="container container2">
       <div class="kab" style="display: flex;">
@@ -59,34 +62,51 @@
         <i class="fa-solid fa-user user-icon"></i>
         <h5 class="user-title">Şəxsi kabinet</h5>
       </div>
-  <div class="middle">
-    <div class="profile-dropdown2">
+      <div class="middle">
+        
+        <div class="profile-dropdown2">
+      
+       {%if request.user.is_authenticated%}
     <div class="top-dropdown">
-      <img class="profile-user" src="https://img.freepik.com/premium-vector/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-vector-illustration_561158-3407.jpg?w=360" alt="">
+
       <div class="user-info">
-      <p class="name-user">Fidan Ismayilova</p>
-      <p class="gmail-user">fidan@gmail.com</p>
-      <p class="number-user">0123456789</p>
+      <p class="name-user">{{ request.user.username }}</p>
+      <p class="gmail-user">{{ request.user.email }}</p>
+       
       </div>
 
 
     </div>
     <div class="bottom-dropdown">
-      <a href="#">Əlaqə məlumatları</a>
-      <button class="logout-btn">Çıxış</button>
+     
+      <form method="post" action="{%url 'accounts:logout'%}">
+       
+        {% csrf_token %}
+        <button type="submit" class="logout-btn">Cixis</button>
+       </form>
     </div>
+    {% else %}
+    <div class="div">
+  <div class="profile-dropdown1">
+    <a href="{% url 'accounts:login' %}">
+      
+      <button class="login-btn">Login</button>
+    </a>
+    <a href="{% url 'accounts:sign' %}">
+
+      <button class="register-btn">Register</button>
+    </a>
+  </div>
+  
+</div>
+
+    {% endif %}
   </div>
         
+  
   </div>
 </div>
-<div class="div">
-  <!-- <div class="profile-dropdown1">
-  
-    <button class="login-btn">Avtorizasiya</button>
-    <button class="register-btn">Qeydiyyat</button>
-  </div> -->
-  
-</div>
+
 
 </div>
     

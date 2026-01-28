@@ -487,9 +487,7 @@
     text-decoration: none;
 }
 
-.news2{
-    margin-left: 20px;
-}
+ 
 .news3{
     margin-left: 40px;
     
@@ -929,6 +927,12 @@
 .reviews-title{
     font-size: 28px;
 }
+.comment-input{
+    border: none;
+    outline: none;
+    width: 50%;
+    background-color: #f7f8fa;
+}
 .wrt-cmt{
     color: white;
     border: none;
@@ -1004,6 +1008,7 @@
     color: #dc0708;
     
 }
+
 .filter-item{
     color: black;
     text-decoration: none;

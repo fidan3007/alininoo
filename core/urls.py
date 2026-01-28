@@ -7,4 +7,5 @@ urlpatterns = [
     path('', home,name = 'home'),
     path('detail/<int:id>/', detailed_page, name = 'detailed-page'),
     path('filtr/', filtr_page, name = 'filtr-page'),
+    path('news/<int:id>/',news_page, name = 'news_page'),
 ]

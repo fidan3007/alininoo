@@ -1,5 +1,5 @@
 from django.db import models
-
+from accounts.models import *
 class News(models.Model):
     title = models.CharField(max_length=100)
     image = models.ImageField(upload_to="news/")
@@ -98,6 +98,14 @@ class Technique(models.Model):
 
 
 
+class Comment(models.Model):
+    user = models.ForeignKey(User,related_name='comments',on_delete=models.CASCADE,null=True,blank=True)
+    product = models.ForeignKey(Product,related_name='comments',on_delete=models.CASCADE,null=True,blank=True)
+    text = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+            return self.text
 
 
 

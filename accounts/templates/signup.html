@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <div class="breadcrumb-items">
+    <li class="breadcrumb-item"><a class="breadcrumb-home" href="./index.html">Əsas</a></li>
+    <li class="breadcrumb-item " aria-current="page">Qeydiyyat</li>
+  </ol>
+  </div>
+</nav>
+    <div class="register">
+        <div class="card-register">
+            <h2 class="register-header">Qeydiyyat</h2>
+            <form method="post" action="#" >
+              {% csrf_token %}
+  <div class="form-group form-group2 ">
+    <label for="exampleInput1">Istifadəçi adı </label>
+    {{form.username}}
+    {{form.username.errors}}
+    
+  </div>
+  <div class="form-group form-group2">
+    <label for="exampleInput2">Ad</label>
+    {{form.first_name}}
+    {{form.first_name.errors}}
+
+  </div>
+  <div class="form-group form-group2">
+    <label for="exampleInput3">Soyad</label>
+    {{form.last_name}}
+    {{form.last_name.errors}}
+
+  </div>
+  <div class="form-group form-group2">
+    <label for="exampleInputEmail">Elektron ünvan</label>
+    {{form.email}}
+    {{form.email.errors}}    
+  </div>
+  <div class="form-group form-group2">
+    <label for="exampleInputPassword1">Şifrə</label>
+    <div class="pswd-int">
+    {{form.password1}}
+    {{form.password1.errors}}
+    <button class="eye-btn" onclick="myFunction()" href="#"><img class="eye-icon" src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png" alt=""></button>
+    </div>
+
+
+
+
+
+  </div>
+  <div class="form-group form-group2">
+    <label for="exampleInputPassword2">Şifrəni təkrar edin</label>
+    <div class="pswd-int">
+    {{form.password2}}
+    {{form.password2.errors}}
+    <button class="eye-btn" onclick="myFunction2()" href="#"><img class="eye-icon" src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png" alt=""></button>
+        </div>
+  </div>
+  <button type="submit" class="btn btn-primary sign-btn">Qeydiyyatdan keçirin</button>
+  <div class="account-btn">
+    <a class="account" href="{% url 'accounts:login' %}">Hesabım var</a>
+  </div>
+</form>
+        </div>
+    </div>
+
+
+{% endblock %}

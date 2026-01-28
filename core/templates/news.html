@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <div class="breadcrumb-items">
+    <li class="breadcrumb-item"><a class="breadcrumb-home" href="./index.html">Əsas</a></li>
+    <li class="breadcrumb-item " aria-current="page">Xəbərlər</li>
+  </ol>
+  </div>
+</nav>
+    <div class="news-page">
+        <div class="news-date">
+            <p class="date">{{newss.date}}</p>
+        </div>
+        <h1 class="news-page-title">{{newss.title}}</h1>
+        <div class="">
+            <p class="news-page-text">{{newss.text}}</p>
+            
+        </div>
+  
+        <h1 class="news-page-title">Digər paylaşımlar</h1>
+        <div class="container">
+          <div class="row">
+
+        
+        {% for news in newsss %}
+        <div class="col-md-4">
+
+        <div class="other-posts">
+  <div class="news-card news2">
+    <div class="new-div">
+    <a href="#">
+      <img class="news-img" src="{{news.image.url}}" alt="">
+      <div class="news-text">
+      <h5 class="news-title">{{news.title}}</h5>
+      <p class="news-description"> {{news.text}}</p>
+      </div>
+
+    </a>
+     </div>
+  </div>
+ 
+        </div>
+        </div>
+
+        {% endfor %}
+        </div>
+        </div>
+    </div>
+{% endblock %}

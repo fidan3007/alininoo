@@ -90,14 +90,30 @@
     <div class="reviews-product">
         <h4 class="reviews-title">Məhsul haqqında rəylər</h4>
         <div class="reviews-items">
+          <form action="#"method="post">
+            {% csrf_token %}
         <div class="grey-line">
-            <img src="./img/pen.png" alt="">
-            <span>Burada hələ heç kim rəy yazmayıb. Birinci olun!</span>
+            <img height="60" src="{% static 'img/pen.png' %}" alt="">
+            {{form.text}}
+            {{form.text.errors}}
+               
         </div>
         <button class="wrt-cmt">Rəy yazın</button>
+        </form>
         </div>
 
-    </div>
+    </div>salam2
+                    {%for comment in data.comments.all%}
+                        
+                             salam 
+                            <div class="comment-body">
+                                <h3>{{comment.user.first_name}} {{comment.user.last_name}}</h3>
+                                <div class="meta">{{comment.date}}</div>
+                                <p>{{comment.text}}</p>
+                                
+                            </div>
+                        
+                        {%endfor%}
 
     <div class="similar-products">
       <h4 class="similar-title">Bənzər məhsullar</h4>

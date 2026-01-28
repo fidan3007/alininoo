@@ -55,7 +55,7 @@
     <i  class="fa-solid fa-star rate-star"></i>
      <i  class="fa-solid fa-star rate-star"></i>
       <i  class="fa-solid fa-star rate-star"></i>
-      <i class="fa-solid fa-comment comment-icon"></i>
+      <i class="fa-solid fa-comment comment-icon">{{data.comments.all.count}} 00</i>
 </div>
 
     <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
@@ -441,7 +441,7 @@
     {% for news in newss %}
     <div class="news-card">
       <div class="new-div">
-    <a href="">
+    <a href="{% url 'core:news_page' news.id%}">
       <img class="news-img" src="{{news.image}}" alt="">
       <div class="news-text">
       <h5 class="news-title">{{news.title}}</h5>

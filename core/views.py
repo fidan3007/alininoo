@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import *
-
+from core.forms import*
 def home(request):
     sliders = Slider.objects.all()
     products1 = Product.objects.order_by("-id")[:5]
@@ -35,10 +35,19 @@ def home(request):
     return render(request, 'index.html',context)
    
 def detailed_page(request, id):
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.product = Product.objects.get(id=id)
+            comment.user = request.user
+            comment.save()
+    form = CommentForm()
     products = Product.objects.get(id=id)
     similar_products = Product.objects.filter()[:5]
     similar_products2 = Product.objects.filter()[5:10]
     context = {
+        'form':form,
         'product': products,
         'similar_products': similar_products,
         'similar_products2': similar_products2,
@@ -106,4 +115,12 @@ def filtr_page(request):
     }
     return render(request, 'filtr-page.html', context)
     
-   
+def news_page(request,id):
+    newsss = News.objects.order_by("-id")[:5]
+
+    newss = News.objects.get(id=id)
+    context = {
+        'newss': newss,
+        'newsss': newsss,
+    }
+    return render(request, 'news.html', context)

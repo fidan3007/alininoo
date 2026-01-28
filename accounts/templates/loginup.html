@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <div class="breadcrumb-items">
+    <li class="breadcrumb-item"><a class="breadcrumb-home" href="./index.html">Əsas</a></li>
+    <li class="breadcrumb-item " aria-current="page">Daxil ol</li>
+  </ol>
+  </div>
+</nav>
+    <div class="login-card">
+        <form class="login-items" method="post" action="#">
+          {% csrf_token %}
+            <h4 class="form-title">Alıcı kabinetinə giriş</h4>
+  <div class="form-group ent-email">
+    <label for="exampleInputEmail1">Telefon və yaxud E-mail</label>
+    <!-- <input type="email" class="form-control email-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> -->
+    {{form.username}}
+    {{form.username.errors}}
+
+  </div>
+  <div class="form-group ent-pass">
+    <label for="exampleInputPassword1">Şifrə</label>
+    {{form.password}}
+    {{form.password.errors}}
+    <!-- <input type="password" class="form-control password-input" id="exampleInputPassword1" placeholder="Password"> -->
+  </div>
+  <button type="submit" class="btn btn-primary submit-btn">Daxil olun</button>
+  <a class="rp-password-btn" href="#">Şifrəni bərpa edin!</a>
+  <a class="signup-btn" href="{% url 'accounts:sign' %}">Qeydiyyatdan keçin</a>
+        </form>
+    </div>
+    
+{% endblock %}
+
+
+
+
+
+
+
