@@ -240,7 +240,7 @@ def filtr_page_ing(request):
         ing_products = Product.objects.filter(author='Marcus Aurelius')
         print(products)
     if author == 'bram':
-        ing_products = Product.objects.filter(author='Bram Stoke')
+        ing_products = Product.objects.filter(author='Bram Stoker')
         print(products)
         
     
