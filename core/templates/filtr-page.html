@@ -11,7 +11,7 @@
 </nav>
      <div class="collapse-title">
             <h4 class="category-title">Yeni Azərbaycan nəşrləri</h4>
-            <p class="quantity">{{products.count}} məhsul</p>
+            <p class="quantity">{{az_products.count}} məhsul</p>
         </div>
         <div class="filtr-page">
     <div class="part1 filter">
@@ -55,36 +55,14 @@
     Cəlil Məmmədquluzadə
   </label></a>
 </div>
-        <div class="form-check">
-  <a href="?author=susan"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" >
-    Susan Sontag
-  </label></a>
-</div>
+       
 
-        <div class="form-check">
-  <a href="?author=rauf"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" >
-    Mehmet Rauf
-  </label></a>
-</div>
-        <div class="form-check">
-  <a href="?author=leo"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" >
-    Leo Tolstoy
-  </label></a>
-</div>
-        <div class="form-check">
-  <a href="?author=emili"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" >
-    Эмили Баллестерос
-  </label></a>
-</div>
+        
 
       </div>
     </div>
   </div>
-  <div class="card">
+  <!-- <div class="card">
     <div class="card-header" id="heading3">
       <h2 class="mb-0">
         <button class="btn btn2 btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
@@ -104,7 +82,7 @@
 
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="card">
     <div class="card-header" id="heading4">
       <h2 class="mb-0">
@@ -122,12 +100,7 @@
     Qanun Nəşriyyatı
   </label></a>
 </div>
-      <div class="form-check">
-  <a href="?publisher=is"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" >
-    İş Bankası Kültür Yayınları
-  </label></a>
-</div>
+      
 
 
       </div>
@@ -141,10 +114,10 @@
   <div class="news-rc">
     
     <div class="article">
-      <a class="news-a" href="#">
+      <a class="news-a" href="{% url 'core:news_page' news.id%}">
         <img src="{{news.image.url}}" alt="">
         <h6>{{news.title}}</h6>
-        <p>{{news.description}} </p>
+        <p>{{news.text}} </p>
       </a>
     </div>
   </div>
@@ -165,9 +138,9 @@
 <div class="products">
   <div class="container">
     <div class="row">
- {% for product in products %}
+ {% for product in az_products %}
       <div class="col-md-3">
-        <a class="product-a" href="#">
+        <a class="product-a" href="{% url 'core:detailed-page' product.id%}">
     <div class="book1">  
     <div class="books-list">
         <div class="card" style="width: 18rem;">
@@ -182,7 +155,7 @@
     <i  class="fa-solid fa-star rate-star"></i>
      <i  class="fa-solid fa-star rate-star"></i>
       <i  class="fa-solid fa-star rate-star"></i>
-      <i class="fa-solid fa-comment comment-icon"></i>
+      <i class="fa-solid fa-comment comment-icon">{{product.comments.all.count}}</i>
 </div>
 
 

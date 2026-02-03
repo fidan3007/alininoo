@@ -5,50 +5,47 @@
   <ol class="breadcrumb">
     <div class="breadcrumb-items">
     <li class="breadcrumb-item"><a class="breadcrumb-home" href="{% url 'core:home' %}">Əsas</a></li>
-    <li class="breadcrumb-item " aria-current="page">Xəbərlər</li>
+    <li class="breadcrumb-item " aria-current="page">Tədbirlər</li>
   </ol>
   </div>
 </nav>
     <div class="news-page">
+     
         <div class="news-date">
-            <p class="date">{{newss.date}}</p>
+            <p class="date">{{clubs.date}}</p>
         </div>
-        <h1 class="news-page-title">{{newss.title}}</h1>
+        <h1 class="news-page-title">{{clubs.title}}</h1>
         <div class="">
-            <p class="news-page-text">{{newss.text}}</p>
-            
+            <p class="news-page-text">{{ clubs.text }}</p>
+            <img src="{{clubs.image.url}}" alt="">
         </div>
-  
+        
+      
         <h1 class="news-page-title">Digər paylaşımlar</h1>
         <div style="max-width: fit-content;margin-right: 100px;" class="container">
           <div class="row">
 
-        
-        {% for news in newsss %}
+        {% for club in clubss %}
         <div class="col-md-4">
-
         <div class="other-posts">
-          <div class="">
-             <div class="news-card news2">
+  <div class="news-card news2">
     <div class="new-div">
-    <a href="{% url 'core:news_page' news.id%}">
-      <img class="news-img" src="{{news.image.url}}" alt="">
+    <a href="{% url 'core:club_page' club.id%}">
+      <img class="news-img" src="{{club.image.url}}" alt="">
       <div class="news-text">
-      <h5 class="news-title">{{news.title}}</h5>
-      <p class="news-description"> {{news.text}}</p>
+      <h5 class="news-title">{{club.title}}</h5>
+      <p class="news-description"> {{club.text}}</p>
       </div>
 
     </a>
      </div>
   </div>
-          </div>
- 
- 
+  
         </div>
         </div>
-
         {% endfor %}
         </div>
         </div>
     </div>
+
 {% endblock %}

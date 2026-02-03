@@ -89,31 +89,52 @@
     </div>
     <div class="reviews-product">
         <h4 class="reviews-title">Məhsul haqqında rəylər</h4>
+        {% if request.user.is_authenticated %}
         <div class="reviews-items">
           <form action="#"method="post">
             {% csrf_token %}
-        <div class="grey-line">
-            <img height="60" src="{% static 'img/pen.png' %}" alt="">
+        <div style="width: 500px;height: 50%;" class="grey-line">
+            <img height="30" src="{% static 'img/pen.png' %}" alt="">
             {{form.text}}
             {{form.text.errors}}
                
         </div>
+        <br>
         <button class="wrt-cmt">Rəy yazın</button>
         </form>
         </div>
+        {% else %}
+        <div style="display: flex;align-items: center;">
 
-    </div>salam2
-                    {%for comment in data.comments.all%}
-                        
-                             salam 
-                            <div class="comment-body">
-                                <h3>{{comment.user.first_name}} {{comment.user.last_name}}</h3>
-                                <div class="meta">{{comment.date}}</div>
-                                <p>{{comment.text}}</p>
+          <h4 class="reviews-title" style="color: red;font-size: 15px;">Məhsul haqqında rəy yazmaq üçün hesab açın</h4>
+          <a style="text-decoration: none;color: red;margin-left: 20px;" href="{% url 'accounts:login' %}"><button class="review-btn">
+            Hesab aç
+
+          </button>
+        </a>
+        </div>
+        {% endif %}
+
+    </div>
+    <div class="container">
+      <div class="row">
+          
+    
+                    {%for comment in product.comments.all%}
+        <div class="col-md-6">
+
+                             
+                            <div class="comment-body cmnt">
+                                <h3>  {{comment.user.first_name}} {{comment.user.last_name}}</h3>
+                                 
+                                <p>  {{comment.text}}</p>
                                 
+        </div>
                             </div>
                         
                         {%endfor%}
+                          </div>
+    </div>
 
     <div class="similar-products">
       <h4 class="similar-title">Bənzər məhsullar</h4>

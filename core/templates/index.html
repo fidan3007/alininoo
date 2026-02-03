@@ -7,10 +7,10 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
   </ol>
   <div class="carousel-inner "  >
     {% for slider in sliders %}
@@ -33,7 +33,7 @@
 
 
 <div class="books">
-    <a class="slide-title" href="{% url 'core:filtr-page' %}">Yeni Azərbaycan nəşrləri</a>
+    <a class="slide-title" href="{% url 'core:filtr-page' %}">Yeni Azərbaycan Nəşrləri</a>
      <div class="">
 <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
  
@@ -55,7 +55,7 @@
     <i  class="fa-solid fa-star rate-star"></i>
      <i  class="fa-solid fa-star rate-star"></i>
       <i  class="fa-solid fa-star rate-star"></i>
-      <i class="fa-solid fa-comment comment-icon">{{data.comments.all.count}} 00</i>
+      <i class="fa-solid fa-comment comment-icon">{{product.comments.all.count}} </i>
 </div>
 
     <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
@@ -89,7 +89,7 @@
     <i  class="fa-solid fa-star rate-star"></i>
      <i  class="fa-solid fa-star rate-star"></i>
       <i  class="fa-solid fa-star rate-star"></i>
-      <i class="fa-solid fa-comment comment-icon"></i>
+      <i class="fa-solid fa-comment comment-icon">{{product.comments.all.count}}</i>
 </div>
 
     <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
@@ -125,7 +125,7 @@
 
 
 <div class="ru-books">
-  <a class="slide-title" href="#">Yeni Rus Nesrleri</a>
+  <a class="slide-title" href="{% url 'core:filtr-page-rus' %}">Yeni Rus Nəşrləri</a>
     <div class="">
 <div id="carouselExampleIndicators4" class="carousel slide" data-ride="carousel">
  
@@ -147,7 +147,7 @@
     <i  class="fa-solid fa-star rate-star"></i>
      <i  class="fa-solid fa-star rate-star"></i>
       <i  class="fa-solid fa-star rate-star"></i>
-      <i class="fa-solid fa-comment comment-icon"></i>
+      <i class="fa-solid fa-comment comment-icon">{{product.comments.all.count}}</i>
 </div>
 
     <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
@@ -181,7 +181,7 @@
     <i  class="fa-solid fa-star rate-star"></i>
      <i  class="fa-solid fa-star rate-star"></i>
       <i  class="fa-solid fa-star rate-star"></i>
-      <i class="fa-solid fa-comment comment-icon"></i>
+      <i class="fa-solid fa-comment comment-icon">{{product.comments.all.count}}</i>
 </div>
 
     <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
@@ -210,7 +210,7 @@
 
 
 <div class="tr-books">
-  <a class="slide-title" href="#">Yeni Turk Nesrleri</a>
+  <a class="slide-title" href="{% url 'core:filtr-page-turk' %}">Yeni Türk Nəşrləri</a>
     <div class="">
 <div id="carouselExampleIndicators5" class="carousel slide" data-ride="carousel">
  
@@ -233,7 +233,7 @@
     <i  class="fa-solid fa-star rate-star"></i>
      <i  class="fa-solid fa-star rate-star"></i>
       <i  class="fa-solid fa-star rate-star"></i>
-      <i class="fa-solid fa-comment comment-icon"></i>
+      <i class="fa-solid fa-comment comment-icon">{{product.comments.all.count}}</i>
 </div>
 
     <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
@@ -265,7 +265,7 @@
     <i  class="fa-solid fa-star rate-star"></i>
      <i  class="fa-solid fa-star rate-star"></i>
       <i  class="fa-solid fa-star rate-star"></i>
-      <i class="fa-solid fa-comment comment-icon"></i>
+      <i class="fa-solid fa-comment comment-icon">{{product.comments.all.count}}</i>
 </div>
 
     <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
@@ -297,7 +297,7 @@
 </div>
 
 <div class="en-books">
-  <a class="slide-title" href="#">Yeni Ingilis Nesrleri</a>
+  <a class="slide-title" href="{% url 'core:filtr-page-ing' %}">Yeni Ingilis Nəşrləri</a>
     <div class="">
 <div id="carouselExampleIndicators6" class="carousel slide" data-ride="carousel">
  
@@ -320,7 +320,7 @@
     <i  class="fa-solid fa-star rate-star"></i>
      <i  class="fa-solid fa-star rate-star"></i>
       <i  class="fa-solid fa-star rate-star"></i>
-      <i class="fa-solid fa-comment comment-icon"></i>
+      <i class="fa-solid fa-comment comment-icon">{{product.comments.all.count}}</i>
 </div>
 
     <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
@@ -360,7 +360,7 @@
     <i  class="fa-solid fa-star rate-star"></i>
      <i  class="fa-solid fa-star rate-star"></i>
       <i  class="fa-solid fa-star rate-star"></i>
-      <i class="fa-solid fa-comment comment-icon"></i>
+      <i class="fa-solid fa-comment comment-icon">{{product.comments.all.count}}</i>
 </div>
 
     <a href="{% url 'core:detailed-page' product.id%}" class="card-btn btn btn-primary">Etrafli</a>
@@ -436,10 +436,10 @@
 </div>
 
 <div class="news">
-  <a class="news-tit" href="#">Xeberler</a>
+  <a class="news-tit" href="#">Xəbərlər</a>
   <div class="news-items">
     {% for news in newss %}
-    <div class="news-card">
+    <div class="news-card" style="width: 450px;">
       <div class="new-div">
     <a href="{% url 'core:news_page' news.id%}">
       <img class="news-img" src="{{news.image}}" alt="">
@@ -537,7 +537,7 @@
   <div class="all-comments">
     <div class="comment1">
     <div class="comment-user">
-      <img class="profile" src="./img/womanpp.png" alt="">
+      <img class="profile" src="{% static 'img/womanpp.png '%}" alt="">
       <div class="user-name">
         <h2>Jalə Məmmədova</h2>
         <p>Bakı Azərbaycan</p>
@@ -551,7 +551,7 @@
   </div>
   <div class="comment2">
     <div class="comment-user">
-      <img class="profile" src="./img/manpp.png" alt="">
+      <img class="profile" src="{% static 'img/manpp.png '%}" alt="">
       <div class="user-name">
         <h2>Ruslan Məmmədov,</h2>
         <p>Ukrayna</p>
@@ -565,7 +565,7 @@
   </div>
   <div class="comment3">
     <div class="comment-user">
-      <img class="profile" src="./img/womanpp.png" alt="">
+      <img class="profile" src="{% static 'img/womanpp.png '%}" alt="">
       <div class="user-name">
         <h2>Jalə Məmmədova</h2>
         <p>Bakı Azərbaycan</p>
@@ -586,9 +586,9 @@
   <a class="news-tit" href="#">Ali ve Nino kitab klubu</a> 
   <div class="news-items">
     {% for club in clubs %}
-    <div class="news-card">
+    <div class="news-card" style="width: 450px;">
       <div class="new-div">
-    <a href="#">
+    <a href="{% url 'core:club_page' club.id%}">
       <img class="news-img" src="{{ club.image }}" alt="">
       <div class="news-text">
       <h5 class="news-title">{{club.title}}</h5>
@@ -607,9 +607,9 @@
   <a class="event-tit" href="#">Tədbirler.Aktivliklər.Əyləncələr</a> 
   <div class="news-items">
     {% for event in events %}
-    <div class="news-card">
+    <div class="news-card" style="width: 450px;">
       <div class="new-div">
-    <a href="#">
+    <a href="{% url 'core:event_page' event.id%}">
       <img class="news-img" src="{{event.image}}" alt="">
       <div class="news-text">
       <h5 class="news-title">{{event.title}}</h5>
